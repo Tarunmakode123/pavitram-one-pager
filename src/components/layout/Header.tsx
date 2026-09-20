@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { SITE_CONFIG } from "@/config/siteConfig";
 import { Phone, Menu, X, CalendarCheck, ChevronRight } from "lucide-react";
 import { trackPhoneClick, trackSiteVisitClick } from "@/lib/analytics/events";
+import { SocialLinks } from "@/components/ui/SocialLinks";
 
 interface HeaderProps {
   onOpenEnquiry: (propertyName?: string) => void;
@@ -23,9 +24,11 @@ export function Header({ onOpenEnquiry }: HeaderProps) {
 
   const navItems = [
     { label: "Properties", href: "#properties" },
-    { label: "Why Pavitram", href: "#why-pavitram" },
-    { label: "How It Works", href: "#how-it-works" },
-    { label: "Indore Locations", href: "#indore-locations" },
+    { label: "Why Us", href: "#why-pavitram" },
+    { label: "About Us", href: "#about-us" },
+    { label: "Blogs", href: "#blogs" },
+    { label: "Process", href: "#how-it-works" },
+    { label: "Locations", href: "#indore-locations" },
     { label: "FAQs", href: "#faqs" },
   ];
 
@@ -52,12 +55,12 @@ export function Header({ onOpenEnquiry }: HeaderProps) {
         </a>
 
         {/* DESKTOP NAV LINKS */}
-        <nav className="hidden lg:flex items-center gap-8">
+        <nav className="hidden lg:flex items-center gap-6">
           {navItems.map((item) => (
             <a
               key={item.label}
               href={item.href}
-              className="text-sm font-medium text-gray-300 hover:text-pavitram-orange transition-colors"
+              className="text-xs xl:text-sm font-medium text-gray-300 hover:text-pavitram-orange transition-colors"
             >
               {item.label}
             </a>
@@ -69,7 +72,7 @@ export function Header({ onOpenEnquiry }: HeaderProps) {
           <a
             href={`tel:${SITE_CONFIG.brand.contactPhone}`}
             onClick={() => trackPhoneClick("Header Desktop")}
-            className="hidden md:flex items-center gap-2 text-xs font-semibold text-gray-300 hover:text-white px-3 py-2 rounded-lg hover:bg-white/5 transition-colors"
+            className="hidden xl:flex items-center gap-2 text-xs font-semibold text-gray-300 hover:text-white px-3 py-2 rounded-lg hover:bg-white/5 transition-colors"
           >
             <Phone className="w-3.5 h-3.5 text-pavitram-orange" />
             {SITE_CONFIG.brand.displayPhone}
@@ -110,20 +113,21 @@ export function Header({ onOpenEnquiry }: HeaderProps) {
 
       {/* MOBILE DRAWER */}
       {mobileMenuOpen && (
-        <div className="lg:hidden glass-modal border-t border-gray-800 px-6 py-6 space-y-4 animate-fadeIn">
-          <nav className="flex flex-col space-y-3">
+        <div className="lg:hidden glass-modal border-t border-gray-800 px-6 py-6 space-y-4 animate-fadeIn max-h-[85vh] overflow-y-auto">
+          <nav className="flex flex-col space-y-2.5">
             {navItems.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="flex items-center justify-between text-base font-medium text-gray-200 hover:text-pavitram-orange py-2 border-b border-gray-800/60"
+                className="flex items-center justify-between text-sm font-medium text-gray-200 hover:text-pavitram-orange py-2 border-b border-gray-800/60"
               >
                 {item.label}
                 <ChevronRight className="w-4 h-4 text-gray-500" />
               </a>
             ))}
           </nav>
+
           <div className="pt-2 flex flex-col gap-3">
             <button
               onClick={() => {
@@ -142,6 +146,11 @@ export function Header({ onOpenEnquiry }: HeaderProps) {
               <Phone className="w-4 h-4 text-pavitram-orange" />
               Call Advisor ({SITE_CONFIG.brand.displayPhone})
             </a>
+          </div>
+
+          <div className="pt-3 border-t border-gray-800 flex flex-col items-center gap-2">
+            <span className="text-[11px] text-gray-400 font-medium uppercase tracking-wider">Connect With Us</span>
+            <SocialLinks />
           </div>
         </div>
       )}

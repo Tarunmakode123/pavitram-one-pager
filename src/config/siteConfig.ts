@@ -19,6 +19,22 @@ export interface LocationItem {
   image: string;
 }
 
+export interface BlogPost {
+  id: string;
+  title: string;
+  category: string;
+  readTime: string;
+  date: string;
+  image: string;
+  excerpt: string;
+  content: string;
+}
+
+export interface SocialLink {
+  platform: "Instagram" | "Facebook" | "LinkedIn" | "YouTube" | "Twitter";
+  url: string;
+}
+
 export const SITE_CONFIG = {
   brand: {
     name: "Pavitram Properties",
@@ -40,6 +56,14 @@ export const SITE_CONFIG = {
     ga4Id: process.env.NEXT_PUBLIC_GA_ID || "",
     metaPixelId: process.env.NEXT_PUBLIC_META_PIXEL_ID || "",
   },
+
+  // Social Media Links (Editable Placeholders)
+  socialLinks: [
+    { platform: "Instagram", url: "https://instagram.com/[PAVITRAM_INSTAGRAM_HANDLE]" },
+    { platform: "Facebook", url: "https://facebook.com/[PAVITRAM_FACEBOOK_PAGE]" },
+    { platform: "LinkedIn", url: "https://linkedin.com/company/[PAVITRAM_LINKEDIN_COMPANY]" },
+    { platform: "YouTube", url: "https://youtube.com/@[PAVITRAM_YOUTUBE_CHANNEL]" },
+  ] as SocialLink[],
 
   // WhatsApp Default Message Builder
   whatsapp: {
@@ -75,6 +99,28 @@ export const SITE_CONFIG = {
       icon: "Navigation",
     },
   ],
+
+  // About Us Brand Story & Values
+  aboutUs: {
+    title: "About Pavitram Properties",
+    subtitle: "A Specialized Vertical of Pavitram India",
+    story: "Pavitram Properties operates as the dedicated real estate arm of Pavitram India. Established to simplify property acquisition in Indore, we combine modern technology with trusted ground advisory to deliver transparent, spam-free property consultation.",
+    vision: "To empower homebuyers and investors across Central India with verified property options, clear legal disclosures, and seamless site visit experiences.",
+    values: [
+      {
+        title: "Brand Trust",
+        desc: "Backed by Pavitram India, upholding strict standards of transparency, compliance, and buyer confidentiality.",
+      },
+      {
+        title: "Curated Shortlisting",
+        desc: "No random option spamming. Every property recommended is hand-picked matching your specific location and budget goals.",
+      },
+      {
+        title: "Dedicated Site Support",
+        desc: "Private transport arrangements, flexible weekend visit slots, and dedicated site advisors to guide you on-ground.",
+      },
+    ],
+  },
 
   // Featured Properties Showcase (Using clear, editable placeholders)
   featuredProperties: [
@@ -159,6 +205,40 @@ export const SITE_CONFIG = {
       image: "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?q=80&w=800&auto=format&fit=crop",
     },
   ] as LocationItem[],
+
+  // Blogs & Buying Guides
+  blogs: [
+    {
+      id: "super-corridor-buying-guide",
+      title: "5 Crucial Things to Check Before Buying a Plot on Super Corridor",
+      category: "Plotted Development",
+      readTime: "4 min read",
+      date: "Sep 2026",
+      image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop",
+      excerpt: "Super Corridor is rapidly growing as Indore's IT and commercial lifeline. Discover key legal approvals, road width standards, and connectivity aspects to verify before booking.",
+      content: "Super Corridor has emerged as one of the most prominent growth axes in Indore due to proximity to TCS, Infosys, and the International Airport. When evaluating plotted townships along this corridor, ensure you verify TNCP (Town & Country Planning) approvals, master plan road widths (minimum 30–40 ft internal roads), underground electricity infrastructure, and RERA registration compliance.",
+    },
+    {
+      id: "vijay-nagar-vs-super-corridor",
+      title: "Vijay Nagar vs Super Corridor: Which Location Suits Your Family?",
+      category: "Location Guide",
+      readTime: "5 min read",
+      date: "Sep 2026",
+      image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=800&auto=format&fit=crop",
+      excerpt: "Compare established social infrastructure in Vijay Nagar with high-growth planned townships along Super Corridor to select your ideal residential address in Indore.",
+      content: "Choosing between Vijay Nagar and Super Corridor depends on your lifestyle priorities. Vijay Nagar offers established social amenities, top schools, healthcare hubs, and vibrant dining. On the other hand, Super Corridor features planned modern townships, wide expressways, and high growth potential for long-term real estate holding.",
+    },
+    {
+      id: "mp-rera-homebuyer-guide",
+      title: "Understanding RERA MP: A Homebuyer's Step-by-Step Checklist",
+      category: "Legal & RERA",
+      readTime: "6 min read",
+      date: "Aug 2026",
+      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop",
+      excerpt: "Learn how to verify RERA MP registration numbers, layout approvals, builder history, and possession timelines before making any financial commitment.",
+      content: "RERA Madhya Pradesh protects homebuyers by ensuring project transparency, escrow account maintenance, and developer accountability. Before transferring booking funds, always verify the project's unique RERA registration on the official RERA MP portal and confirm approved floor plans and possession schedules.",
+    },
+  ] as BlogPost[],
 
   // Process Steps
   processSteps: [

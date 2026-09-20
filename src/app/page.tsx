@@ -7,6 +7,8 @@ import { TrustSection } from "@/components/sections/TrustSection";
 import { FeaturedProperties } from "@/components/sections/FeaturedProperties";
 import { RequirementSelector } from "@/components/sections/RequirementSelector";
 import { WhyPavitram } from "@/components/sections/WhyPavitram";
+import { AboutUsSection } from "@/components/sections/AboutUsSection";
+import { BlogsSection } from "@/components/sections/BlogsSection";
 import { BuyingProcess } from "@/components/sections/BuyingProcess";
 import { IndoreLocationSection } from "@/components/sections/IndoreLocationSection";
 import { InvestmentGuidance } from "@/components/sections/InvestmentGuidance";
@@ -67,28 +69,34 @@ export default function Home() {
       {/* 4. REQUIREMENT SELECTOR */}
       <RequirementSelector onOpenEnquiryWithFilter={handleOpenEnquiryWithFilter} />
 
-      {/* 5. WHY PAVITRAM PROPERTIES */}
+      {/* 5. ABOUT US SECTION */}
+      <AboutUsSection onOpenEnquiry={handleOpenEnquiry} />
+
+      {/* 6. BLOGS & REAL ESTATE GUIDES */}
+      <BlogsSection onOpenEnquiry={handleOpenEnquiry} />
+
+      {/* 7. WHY PAVITRAM PROPERTIES */}
       <WhyPavitram />
 
-      {/* 6. PROPERTY BUYING PROCESS */}
+      {/* 8. PROPERTY BUYING PROCESS */}
       <BuyingProcess />
 
-      {/* 7. INDORE LOCATION SECTION */}
+      {/* 9. INDORE LOCATION SECTION */}
       <IndoreLocationSection onOpenEnquiry={handleOpenEnquiry} />
 
-      {/* 8. INVESTMENT GUIDANCE */}
+      {/* 10. INVESTMENT GUIDANCE */}
       <InvestmentGuidance onOpenEnquiry={handleOpenEnquiry} />
 
-      {/* 9. VISUAL STORYTELLING */}
+      {/* 11. VISUAL STORYTELLING */}
       <VisualStorytelling onOpenEnquiry={handleOpenEnquiry} />
 
-      {/* 10. TRUST ALTERNATIVE SECTION */}
+      {/* 12. TRUST ALTERNATIVE SECTION */}
       <TrustAlternativeSection />
 
-      {/* 11. FAQ SECTION */}
+      {/* 13. FAQ SECTION */}
       <FAQSection />
 
-      {/* 12. FINAL DRAMATIC CTA */}
+      {/* 14. FINAL DRAMATIC CTA */}
       <FinalCTA onOpenEnquiry={handleOpenEnquiry} />
 
       {/* FOOTER */}

@@ -3,6 +3,7 @@
 import React from "react";
 import { SITE_CONFIG } from "@/config/siteConfig";
 import { Phone, Mail, MapPin, Shield, ChevronUp } from "lucide-react";
+import { SocialLinks } from "@/components/ui/SocialLinks";
 
 export function Footer() {
   const scrollToTop = () => {
@@ -26,9 +27,18 @@ export function Footer() {
             <p className="text-xs text-gray-400 leading-relaxed">
               A specialized real estate vertical of <strong className="text-gray-200">{SITE_CONFIG.brand.parentBrand}</strong>. Delivering transparent property shortlisting and advisory services across Indore.
             </p>
+
             <div className="pt-1 flex items-center gap-2 text-[11px] text-gray-400 bg-white/5 px-3 py-1.5 rounded-lg border border-gray-800 w-fit">
               <Shield className="w-3.5 h-3.5 text-pavitram-orange" />
               <span>RERA Status: {SITE_CONFIG.brand.reraNumber}</span>
+            </div>
+
+            {/* SOCIAL MEDIA LINKS */}
+            <div className="pt-2">
+              <span className="block text-[11px] font-bold text-white uppercase tracking-wider mb-2">
+                Follow Our Channels
+              </span>
+              <SocialLinks />
             </div>
           </div>
 
@@ -39,6 +49,16 @@ export function Footer() {
               <li>
                 <a href="#properties" className="hover:text-pavitram-orange transition-colors">
                   Featured Properties
+                </a>
+              </li>
+              <li>
+                <a href="#about-us" className="hover:text-pavitram-orange transition-colors">
+                  About Us (Pavitram India)
+                </a>
+              </li>
+              <li>
+                <a href="#blogs" className="hover:text-pavitram-orange transition-colors">
+                  Indore Real Estate Blogs
                 </a>
               </li>
               <li>
