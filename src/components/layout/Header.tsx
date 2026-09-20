@@ -32,21 +32,21 @@ export function Header({ onOpenEnquiry }: HeaderProps) {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-        scrolled ? "glass-header py-3 shadow-luxury" : "bg-gradient-to-b from-black/80 to-transparent py-5"
+        scrolled ? "glass-header py-2.5 sm:py-3 shadow-luxury" : "bg-gradient-to-b from-black/90 to-transparent py-3 sm:py-5"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* BRAND LOGO */}
         <a href="#" className="flex flex-col group">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-pavitram-orange flex items-center justify-center font-bold text-white text-lg shadow-glow">
+            <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-pavitram-orange flex items-center justify-center font-bold text-white text-base sm:text-lg shadow-glow">
               P
             </div>
-            <span className="text-lg md:text-xl font-extrabold tracking-tight text-white group-hover:text-pavitram-orange transition-colors">
+            <span className="text-base sm:text-lg md:text-xl font-extrabold tracking-tight text-white group-hover:text-pavitram-orange transition-colors">
               PAVITRAM <span className="font-light text-gray-300">PROPERTIES</span>
             </span>
           </div>
-          <span className="text-[10px] tracking-wider uppercase text-gray-400 font-medium pl-10">
+          <span className="hidden sm:block text-[10px] tracking-wider uppercase text-gray-400 font-medium pl-10 -mt-0.5">
             A {SITE_CONFIG.brand.parentBrand} Vertical
           </span>
         </a>

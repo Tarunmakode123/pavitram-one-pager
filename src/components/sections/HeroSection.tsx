@@ -15,7 +15,7 @@ export function HeroSection({ onOpenEnquiry }: HeroSectionProps) {
   const featuredOpp = SITE_CONFIG.featuredProperties[0];
 
   return (
-    <section className="relative min-h-[85vh] lg:min-h-screen flex items-center pt-20 pb-12 lg:pt-24 lg:pb-16 overflow-hidden bg-pavitram-dark">
+    <section className="relative min-h-[85vh] lg:min-h-screen flex items-center pt-28 pb-12 sm:pt-32 lg:pt-32 lg:pb-16 overflow-hidden bg-pavitram-dark">
       {/* BACKGROUND IMAGE & OVERLAY */}
       <div className="absolute inset-0 z-0">
         <Image
