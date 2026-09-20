@@ -40,42 +40,58 @@ body {
 
 /* Typography Fluid Hierarchy */
 .hero-headline {
-  font-size: clamp(2.2rem, 5.5vw, 5rem);
-  line-height: 1.1;
+  font-size: clamp(2rem, 8vw, 4.8rem);
+  line-height: 1.12;
   letter-spacing: -0.02em;
 }
 
 .section-title {
-  font-size: clamp(1.8rem, 3.8vw, 3.2rem);
+  font-size: clamp(1.6rem, 5vw, 3.2rem);
   line-height: 1.2;
   letter-spacing: -0.015em;
 }
 
 .subheadline {
-  font-size: clamp(1rem, 1.2vw, 1.25rem);
+  font-size: clamp(0.95rem, 3.5vw, 1.25rem);
   line-height: 1.6;
 }
 
 /* Glassmorphism Navigation */
 .glass-header {
-  background: rgba(17, 17, 17, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(17, 17, 17, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .glass-card {
-  background: rgba(26, 26, 26, 0.7);
+  background: rgba(26, 26, 26, 0.75);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .glass-modal {
-  background: rgba(17, 17, 17, 0.95);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: rgba(17, 17, 17, 0.96);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
   border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Mobile Input Auto-Zoom Prevention (iOS Safari requires min 16px font-size) */
+@media (max-width: 768px) {
+  input, select, textarea {
+    font-size: 16px !important;
+  }
+}
+
+/* Hide scrollbar for clean horizontal mobile swiping */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 /* Accessible focus ring */
@@ -96,3 +112,4 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
     scroll-behavior: auto !important;
   }
 }
+
